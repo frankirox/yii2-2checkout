@@ -39,15 +39,6 @@ class TwoCheckout extends Object
     {
         $this->locator = new ServiceLocator();
 
-        if ($this->username && $this->password) {
-            \Twocheckout::username($this->username);
-            \Twocheckout::password($this->password);
-        }
-
-        \Twocheckout::privateKey($this->privateKey);
-        if (!$this->sellerId) {
-            throw new InvalidConfigException('Invalid seller id was specified');
-        }
         \Twocheckout::sellerId($this->sellerId);
         if (!$this->secretWord) {
             throw new InvalidConfigException('Invalid secret word was specified');
