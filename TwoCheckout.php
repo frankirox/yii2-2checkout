@@ -17,23 +17,13 @@ use yii\di\ServiceLocator;
  */
 class TwoCheckout extends Object
 {
-    /** @var string API private key */
-    public $privateKey = '';
+
     /** @var string seller id */
     public $sellerId = '';
     /** @var string used to check payment requests */
     public $secretWord = '';
     /** @var string demo mode config. Available values 'Y' and 'N' */
     public $demo = 'Y';
-
-    /** @var string Admin API username */
-    public $username = '';
-    /** @var string Admin API password */
-    public $password = '';
-
-    /** @var bool check SSL */
-    public $verifySSL = false;
-
     /** @var bool API requests mode */
     public $sandbox = false;
     /** @var string API response format */
@@ -54,9 +44,6 @@ class TwoCheckout extends Object
             \Twocheckout::password($this->password);
         }
 
-        if (!$this->privateKey) {
-            throw new InvalidConfigException('Invalid private key was specified');
-        }
         \Twocheckout::privateKey($this->privateKey);
         if (!$this->sellerId) {
             throw new InvalidConfigException('Invalid seller id was specified');
@@ -65,7 +52,6 @@ class TwoCheckout extends Object
         if (!$this->secretWord) {
             throw new InvalidConfigException('Invalid secret word was specified');
         }
-        \TwoCheckout::verifySSL($this->verifySSL);
         \Twocheckout::sandbox($this->sandbox);
         \Twocheckout::format($this->format);
     }
