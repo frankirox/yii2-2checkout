@@ -1,6 +1,6 @@
 {
-    "name": "joni-jones/yii2-2checkout",
-    "description": "Yii2 extension for 2checkout library",
+    "name": "frankirox/yii2-2checkout",
+    "description": "Yii2 extension for 2checkout library forked from joni-jones/yii2-2checkout",
     "keywords": ["yii2", "2Checkout", "2co", "payment", "gateway"],
     "type": "yii2-extension",
     "license": "MIT",
@@ -8,6 +8,10 @@
         {
             "name": "Ievgen Sentiabov",
             "email": "ievgen.sentiabov@gmail.com"
+        },
+        {
+            "name": "Franchesco Fonseca",
+            "email": "fonseca.franchesco@gmail.com"
         }
     ],
     "minimum-stability": "dev",
