@@ -24,10 +24,6 @@ class TwoCheckout extends Object
     public $secretWord = '';
     /** @var string demo mode config. Available values 'Y' and 'N' */
     public $demo = 'Y';
-    /** @var bool API requests mode */
-    public $sandbox = false;
-    /** @var string API response format */
-    public $format = 'array';
 
     /** @var \yii\di\ServiceLocator $locator */
     private $locator = null;
@@ -43,8 +39,6 @@ class TwoCheckout extends Object
         if (!$this->secretWord) {
             throw new InvalidConfigException('Invalid secret word was specified');
         }
-        \Twocheckout::sandbox($this->sandbox);
-        \Twocheckout::format($this->format);
     }
 
     /**
